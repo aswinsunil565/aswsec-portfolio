@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Aswin CS — Cybersecurity portfolio" />
+    <title>Aswin CS | Cybersecurity Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico  " />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <div class="cursor-glow"></div>
+    <canvas id="matrix"></canvas>
+    <header class="nav">
+      <a class="brand" href="#home"
+        ><span class="prompt">&gt;_</span>ASWIN<span class="dim">.CS</span></a
+      ><button class="menu" aria-label="Open menu">☰</button>
+      <nav>
+        <a href="#about">About</a><a href="#education">Education</a
+        ><a href="#skills">Skills</a><a href="#projects">Projects</a
+        ><a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section id="home" class="hero section">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span class="dot"></span> Online
+          </div>
+          <h1>Hello, I'm <span>Aswin CS</span></h1>
+          <h2>
+            I'm a <span id="typed">Cybersecurity Enthusiast</span
+            ><b class="caret">_</b>
+          </h2>
+          <p>
+            Learning to find vulnerabilities, understand attacks, and build more
+            secure systems.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="#projects"
+              >View Projects <span>↗</span></a
+            ><a class="btn" href="resume.html">View Resume</a>
+          </div>
+          <div class="socials">
+            <a href="https://github.com/aswinsunil565" target="_blank">GitHub ↗</a
+            ><a href="https://www.linkedin.com/in/aswinsunil/" target="_blank">LinkedIn ↗</a
+            ><a href="mailto:aswinsunil565@gmail.com">Email ↗</a
+            ><a href="https://www.instagram.com/asw.pvtt/" target="_blank">Instagram ↗</a>
+          </div>
+        </div>
+        <div class="terminal hero-terminal reveal">
+          <div class="term-head">
+            <span class="lights"><i></i><i></i><i></i></span
+            ><span>~/aswin/security.sh</span><span>●</span>
+          </div>
+          <div class="term-body">
+            <p><span class="green">$</span> whoami</p>
+            <p class="out">aswin-cs</p>
+            <p><span class="green">$</span> cat mission.txt</p>
+            <p class="out">Learn. Break. Secure. Repeat.</p>
+            <p><span class="green">$</span> ./status</p>
+            <p class="out">
+              <span class="green"></span> Breaking systems ethically
+              to build unbreakable security solutions.
+            </p>
+            <p><span class="green">$</span><span class="blink">_</span></p>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="section">
+        <div class="section-head reveal">
+          <span>01 / ABOUT</span>
+          <h2>Building Secure Systems</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <h3>Cybersecurity learner & builder</h3>
+            <p>
+              I'm Aswin CS, a BTech Computer Science graduate building practical
+              skills in network security, penetration testing, vulnerability
+              assessment, Linux and web application security.
+            </p>
+            <p>
+                Let's build things that break, and then secure them better.
+            </p>
+            <div class="tags">
+              <span>Network Security</span><span>Web Security</span
+              ><span>Penetration Testing</span><span>Linux</span>
+            </div>
+          </div>
+          <div class="stats">
+
+            <div class="stat reveal">
+              <strong data-count="10">0</strong><span>Security Tools</span>
+              <small>Recon • Testing • Analysis</small>
+            </div>
+            
+            <div class="stat reveal">
+              <strong data-count="3">0</strong><span>Security Domains</span>
+              <small>Network • Web • Linux</small>
+            </div>
+            
+            <div class="stat reveal">
+              <strong data-count="2">0</strong><span>Projects</span>
+              <small>Academic & Practical</small>
+            </div>
+            
+            <div class="stat reveal">
+              <strong data-count="1">0</strong><span>Focus</span>
+              <small>Cybersecurity</small>
+            </div>
+          </div>
+         </div>
+        </div>
+      </section>
+      <section id="education" class="section alt">
+        <div class="section-head reveal">
+          <span>02 / EDUCATION</span>
+          <h2>Academic Journey</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="year">2020 — 2024</div>
+            <div>
+              <h3>B.Tech — Computer Science & Engineering</h3>
+              <p>Mar Baselios Christian College of Engineering and Technology, Kuttikkanam</p>
+              <small>Kerala, India</small>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="year">2024 — Present</div>
+            <div>
+              <h3>Cybersecurity Skill Development</h3>
+              <p>
+                Hands-on labs, web security, networking & penetration testing
+              </p>
+              <small>TryHackMe • Personal Labs</small>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="skills" class="section">
+        <div class="section-head reveal">
+          <span>03 / SKILLS</span>
+          <h2>Skills & Expertise</h2>
+          <p>A practical toolkit focused on cybersecurity fundamentals.</p>
+        </div>
+        <div class="skill-grid">
+          <article class="skill-card reveal">
+            <div class="num">01</div>
+            <h3>Offensive Security </h3>
+            <p>
+              Reconnaissance, enumeration, vulnerability testing and basic web
+              application security.
+            </p>
+            <div class="chips">
+              <span>Nmap</span><span>Burp Suite</span><span>Metasploit</span
+              ><span>Gobuster</span><span>Nikto</span><span>SQLmap</span><span>Hydra</span><span>Wireshark</span>
+            </div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="num">02</div>
+            <h3>Network & Analysis</h3>
+            <p>
+              Understanding protocols, traffic, services and common
+              network-security concepts.
+            </p>
+            <div class="chips">
+              <span>TCP/IP</span><span>DNS</span><span>HTTP/HTTPS</span
+              ><span>Wireshark</span><span>OSI</span><span>Ports</span><span>Nslookup</span><span>Traceroute</span><span>Dig</span>
+            </div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="num">03</div>
+            <h3>Web Security</h3>
+            <p>
+              Core OWASP concepts and beginner-level testing of common web
+              vulnerabilities.
+            </p>
+            <div class="chips">
+              <span>OWASP Top 10</span><span>XSS</span><span>SQL Injection</span
+              ><span>Auth</span><span>Burp</span>
+            </div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="num">04</div>
+            <h3>Scripting & Systems</h3>
+            <p>
+              Using scripting and Linux tools to automate repetitive security
+              tasks and labs.
+            </p>
+            <div class="chips">
+              <span>Python</span><span>Kali Linux</span><span>Linux CLI</span
+              ><span>Windows</span><span>Git</span>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="tools" class="section terminal-section">
+        <div class="terminal wide reveal">
+          <div class="term-head">
+            <span class="lights"><i></i><i></i><i></i></span
+            ><span>~/tools.sh</span><span>●</span>
+          </div>
+          <div class="term-body tool-lines">
+            <p><span class="green">$</span> cat tools</p>
+            <div class="tool-row">
+              <b>RECON</b><span>Nmap</span><span>Gobuster</span
+              ><span>Whois</span><span>Amass</span><span>Assetfinder</span>
+              <span>Subfinder</span><span>Subbrute</span><span>Sublist3r</span>
+              <span>WhatWeb</span><span>Dig</span><span>Nslookup</span><span>theHarvester</span>
+            </div>
+            <div class="tool-row">
+              <b>WEB</b><span>Burp Suite</span><span>SQLmap</span
+              ><span>Nikto</span><span>Gobuster</span><span>FFUF</span><span>Dirb</span>
+              <span>Dirsearch</span><span>Nuclei</span><span>SQLmap</span><span>Wfuzz</span>
+            </div>
+            <div class="tool-row">
+              <b>VULN ASSESSMENT</b><span>Nessus</span><span>OpenVAS</span
+              ><span>Nuclei</span><span>Nikto</span><span>Burp Suite</span><span>OWASP ZAP</span>
+            </div>
+            <div class="tool-row">
+              <b>OS</b><span>Linux</span><span>Kali Linux</span><span>Windows</span
+              ><span>Ubuntu</span>
+            </div>
+            <div class="tool-row">
+              <b>DEVELOPMENT</b><span>HTML</span><span>CSS</span><span>JavaScript</span
+              ><span>Python</span><span>Bootstrap</span><span>Node.js</span><span>Git</span>
+              <span>Github</span>
+            </div>
+            <div class="tool-row">
+              <b>DESIGN</b><span>UI/UX</span><span>Figma</span><span>Adobe Photoshop</span
+              ><span>Adobe XD</span><span>Adobe Illustrator</span><span>Responsive Design</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="section alt">
+        <div class="section-head reveal">
+          <span>04 / PROJECTS</span>
+          <h2>Featured Projects</h2>
+          <p>Security-focused projects built while learning by doing.</p>
+        </div>
+        <div class="filters">
+          <button class="active" data-filter="all">All</button
+          ><button data-filter="security">Security</button
+          ><button data-filter="python">Python</button
+          ><button data-filter="ai">AI / ML</button>
+        </div>
+        <div class="project-grid">
+          <article class="project reveal" data-cat="security python">
+            <div class="project-top">
+              <span>01</span><span>Security Tool</span>
+            </div>
+            <h3>Mini-Nmap Scanner</h3>
+            <p>
+              A simplified network scanner that accepts an IP address, checks
+              common ports, identifies open/closed states and displays response
+              time, with optional basic service detection.
+            </p>
+            <div class="project-tech">
+              <span>Python</span><span>Networking</span
+              ><span>Nmap Concepts</span>
+            </div>
+            <a href="https://github.com/aswinsunil565/Mini-Nmap.git" target="_blank">Code ↗</a>
+          </article>
+          <article class="project reveal" data-cat="ai">
+            <div class="project-top">
+              <span>02</span><span>Academic Project</span>
+            </div>
+            <h3>NOTEIFY</h3>
+            <p>
+              AI-assisted note-taking application that converts spoken content
+              into text, processes the text and generates concise notes for
+              later retrieval.
+            </p>
+            <div class="project-tech">
+              <span>Whisper AI</span><span>NLP</span><span>Flutter</span
+              ><span>Python</span>
+            </div>
+            <a href="#contact">View details ↗</a>
+          </article>
+          <article class="project reveal" data-cat="security">
+            <div class="project-top">
+              <span>03</span><span>Learning Lab</span>
+            </div>
+            <h3>Web Security Labs</h3>
+            <p>
+              Hands-on practice with reconnaissance, HTTP, authentication, XSS,
+              SQL injection, Burp Suite and OWASP Top 10 concepts.
+            </p>
+            <div class="project-tech">
+              <span>Burp Suite</span><span>OWASP</span><span>Linux</span>
+            </div>
+            <a href="#contact">View learning path ↗</a>
+          </article>
+        </div>
+      </section>
+      <section id="contact" class="section">
+        <div class="section-head reveal">
+          <span>05 / CONTACT</span>
+          <h2>Get In Touch</h2>
+          <p>Have a project in mind? Let's connect and build something secure together.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="terminal reveal">
+            <div class="term-head">
+              <span class="lights"><i></i><i></i><i></i></span
+              ><span>~/contact_info.sh</span><span>●</span>
+            </div>
+            <div class="term-body">
+              <p><span class="green">$</span> cat contact_info</p>
+              <p class="label">Email</p>
+              <a href="mailto:aswinsunil565@gmail.com">aswinsunil565@gmail.com</a>
+              <p class="label">GitHub</p>
+              <a href="https://github.com/aswinsunil565" target="_blank"
+                >github.com/aswinsunil</a
+              >
+              <p class="label">LinkedIn</p>
+              <a href="https://www.linkedin.com/in/aswinsunil/" target="_blank"
+                >linkedin.com/aswinsunil</a
+              >
+              <p class="label">Instagram</p>
+              <a href="https://www.instagram.com/asw.pvtt/" target="_blank"
+                >instagram.com/asw.pvtt</a
+              >
+              <p class="label">Location</p>
+              <p>India</p>
+            </div>
+          </div>
+          <form id="contactForm" class="contact-form reveal">
+            <label
+              >Name<input name="name" required placeholder="Your name" /></label
+            ><label
+              >Email<input
+                type="email"
+                name="email"
+                required
+                placeholder="you@example.com" /></label
+            ><label
+              >Message<textarea
+                name="message"
+                rows="7"
+                required
+                placeholder="Tell me what you'd like to discuss..."
+              ></textarea></label
+            ><button class="btn primary" type="submit">
+              Send Message <span>↗</span></button
+            ><small id="formStatus"
+              >This form opens your email client securely.</small
+            >
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>© <span id="year"></span> ASWIN CS</span
+      ><span>Built with curiosity &amp; code.</span>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
