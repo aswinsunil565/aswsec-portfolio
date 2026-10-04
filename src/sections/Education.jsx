@@ -7,8 +7,14 @@ export default function Education() {
       <SectionHead num="02" label="EDUCATION" title="Academic Journey" />
       <Reveal className="timeline">
         {education.map(([d, t, s, l]) => (
-          <div className="timeline-item" key={t}><span className="year">{d}</span>
-            <div><h3>{t}</h3><p>{s}</p><small>{l}</small></div></div>
+          <div className="timeline-item" key={t}>
+            <span className="year">{d}</span>
+            <div>
+              <h3>{t}</h3>
+              <p>{s}</p>
+              <small>{l}</small>
+            </div>
+          </div>
         ))}
       </Reveal>
     </section>

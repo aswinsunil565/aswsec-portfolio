@@ -13,13 +13,27 @@ export default function App() {
   const isResume = window.location.pathname.replace(/\/$/, "") === "/resume";
   return (
     <>
-      <div className="noise" /><Background /><CursorGlow /><Navbar base={isResume ? "/" : ""} />
-      {isResume ? <Resume /> : (
+      <div className="noise" />
+      <Background />
+      <CursorGlow />
+      <Navbar base={isResume ? "/" : ""} />
+      {isResume ? (
+        <Resume />
+      ) : (
         <main>
-          <Hero /><About /><Education /><Skills /><Terminal /><Projects /><Contact />
+          <Hero />
+          <About />
+          <Education />
+          <Skills />
+          <Terminal />
+          <Projects />
+          <Contact />
         </main>
       )}
-      <footer><span>© {isResume ? new Date().getFullYear() + " " : ""}ASWIN CS</span><span>Built with curiosity &amp; code.</span></footer>
+      <footer>
+        <span>© {isResume ? new Date().getFullYear() + " " : ""}ASWIN CS</span>
+        <span>Built with curiosity &amp; code.</span>
+      </footer>
     </>
   );
 }
