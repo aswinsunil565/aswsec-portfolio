@@ -3,44 +3,59 @@ import SectionHead from "../components/SectionHead";
 export default function Contact() {
   const [state, setState] = useState({ s: "idle", m: "" });
   const submit = async (e) => {
-    e.preventDefault();
-    const form = e.target,
-      email = form.email.value.trim();
-    if (!form.name.value.trim() || !form.message.value.trim())
-      return setState({ s: "error", m: "Please fill in all required fields." });
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-      form.email.focus();
-      return setState({ s: "error", m: "Please enter a valid email address." });
-    }
-    setState({ s: "loading", m: "Sending message…" });
-    try {
-      // The Web3Forms access key lives only on the server (api/contact.js), never in the browser.
-      const r = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          name: form.name.value.trim(),
-          email,
-          message: form.message.value.trim(),
-          website: form.website.value,
-        }),
+  e.preventDefault();
+  const form = e.target,
+    name = form.name.value.trim(),
+    email = form.email.value.trim(),
+    message = form.message.value.trim();
+
+  if (!name || !message)
+    return setState({ s: "error", m: "Please fill in all required fields." });
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+    form.email.focus();
+    return setState({ s: "error", m: "Please enter a valid email address." });
+  }
+
+  // Honeypot: bots fill the hidden field, so pretend success and drop it
+  if (form.website.value) {
+    setState({ s: "success", m: "Message sent successfully!" });
+    return form.reset();
+  }
+
+  const key = import.meta.env.VITE_WEB3FORMS_KEY;
+  if (!key)
+    return setState({ s: "error", m: "Contact form is not configured." });
+
+  setState({ s: "loading", m: "Sending message…" });
+  try {
+    const r = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: key,
+        name,
+        email,
+        message: message.slice(0, 5000),
+        subject: `Portfolio message from ${name}`,
+        from_name: "Portfolio",
+      }),
+    });
+    const d = await r.json().catch(() => ({}));
+    if (r.ok && d.success) {
+      setState({ s: "success", m: "Message sent successfully!" });
+      form.reset();
+    } else
+      setState({
+        s: "error",
+        m: d.message || "Something went wrong. Please try again.",
       });
-      const d = await r.json().catch(() => ({}));
-      if (r.ok && d.success) {
-        setState({ s: "success", m: "Message sent successfully!" });
-        form.reset();
-      } else
-        setState({
-          s: "error",
-          m: d.message || "Something went wrong. Please try again.",
-        });
-    } catch {
-      setState({ s: "error", m: "Unable to send message. Please try again." });
-    }
-  };
+  } catch {
+    setState({ s: "error", m: "Unable to send message. Please try again." });
+  }
+};
   return (
     <section id="contact" className="section">
       <SectionHead
