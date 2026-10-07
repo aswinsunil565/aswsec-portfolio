@@ -64,18 +64,16 @@ export default async function handler(req, res) {
     });
     const d = await r.json().catch(() => ({}));
     if (r.ok && d.success) return res.status(200).json({ success: true });
-    return res
-      .status(502)
-      .json({
-        success: false,
-        message: "Could not send your message. Please try again later.",
-      });
-  } catch {
-    return res
-      .status(502)
-      .json({
-        success: false,
-        message: "Could not send your message. Please try again later.",
-      });
+    console.error("Web3Forms failed:", r.status, JSON.stringify(d));
+    return res.status(502).json({
+      success: false,
+      message: "Could not send your message. Please try again later.",
+    });
+  } catch (err) {
+    console.error("Web3Forms request error:", err);
+    return res.status(502).json({
+      success: false,
+      message: "Could not send your message. Please try again later.",
+    });
   }
 }
