@@ -22,39 +22,26 @@ export default function Contact() {
     return form.reset();
   }
 
-  const key = import.meta.env.VITE_WEB3FORMS_KEY;
-  if (!key)
-    return setState({ s: "error", m: "Contact form is not configured." });
-
-  setState({ s: "loading", m: "Sending message…" });
-  try {
-    const r = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        access_key: key,
-        name,
-        email,
-        message: message.slice(0, 5000),
-        subject: `Portfolio message from ${name}`,
-        from_name: "Portfolio",
-      }),
+setState({ s: "loading", m: "Sending message…" });
+try {
+  const r = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, email, message }),
+  });
+  const d = await r.json().catch(() => ({}));
+  if (r.ok && d.success) {
+    setState({ s: "success", m: "Message sent successfully!" });
+    form.reset();
+  } else {
+    setState({
+      s: "error",
+      m: d.message || "Something went wrong. Please try again.",
     });
-    const d = await r.json().catch(() => ({}));
-    if (r.ok && d.success) {
-      setState({ s: "success", m: "Message sent successfully!" });
-      form.reset();
-    } else
-      setState({
-        s: "error",
-        m: d.message || "Something went wrong. Please try again.",
-      });
-  } catch {
-    setState({ s: "error", m: "Unable to send message. Please try again." });
   }
+} catch {
+  setState({ s: "error", m: "Unable to send message. Please try again." });
+}
 };
   return (
     <section id="contact" className="section">
