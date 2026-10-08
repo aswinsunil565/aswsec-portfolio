@@ -1,33 +1,192 @@
-.resume-page{max-width:1180px;margin:0 auto;min-height:100vh;padding:120px 24px 80px;position:relative;overflow:hidden}
-.resume-page::before{content:"";position:absolute;width:600px;height:600px;top:10%;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(0,255,140,.07),transparent 65%);pointer-events:none}
-.resume-top{max-width:none;margin:0 auto 45px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative;z-index:2}
-.back-link{font-family:"JetBrains Mono",monospace;font-size:13px;color:#888;text-decoration:none;transition:.3s ease}
-.back-link:hover{color:#00ff88;transform:translateX(-4px)}
-.resume-actions{display:flex;gap:12px;flex-wrap:wrap}.resume-actions .btn{text-decoration:none}
-.resume-heading{max-width:none;margin:0 auto 35px;position:relative;z-index:2}
-.resume-heading .eyebrow{font-family:"JetBrains Mono",monospace;color:#00ff88;font-size:13px;margin-bottom:12px}
-.resume-heading h1{margin:0;font-size:clamp(48px,7vw,92px);line-height:.9;letter-spacing:-.06em;font-weight:800}
-.resume-heading h1 span{color:#00ff88}
-.resume-heading p{max-width:600px;margin-top:22px;color:#888;line-height:1.7}
-.resume-terminal{max-width:none;margin:0 auto;position:relative;z-index:2;border:1px solid rgba(255,255,255,.1);background:rgba(8,8,8,.85);backdrop-filter:blur(15px);box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 80px rgba(0,255,140,.04);overflow:hidden}
-.resume-terminal-head{height:48px;padding:0 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08);color:#777;font-family:"JetBrains Mono",monospace;font-size:12px}
-.resume-terminal-head .eyebrow{margin-bottom:5px}
-.terminal-lights{display:flex;gap:7px}
-.terminal-lights i{width:9px;height:9px;border-radius:50%;background:#444;display:block}
-.terminal-path{flex:1;margin-left:15px}
-.resume-viewer{background:#111;padding:20px}
-.resume-viewer iframe{display:block;width:100%;height:900px;border:0;background:#fff}
-.resume-command{max-width:none;margin:25px auto 0;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.025);font-family:"JetBrains Mono",monospace;font-size:12px}
-.resume-command .command{color:#777}.resume-command .command span{color:#00ff88}.resume-command .status{color:#555}
-@media(max-width:768px){
-.resume-page{padding:100px 18px 50px}
-.resume-top{align-items:flex-start;flex-direction:column}
-.resume-actions{width:100%}.resume-actions .btn{flex:1;text-align:center}
-.resume-viewer{padding:8px}.resume-viewer iframe{height:700px}
-.resume-command{flex-direction:column;align-items:flex-start}
+.resume-page {
+  max-width: 1180px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 120px 24px 80px;
+  position: relative;
+  overflow: hidden;
 }
-@media(max-width:480px){
-.resume-page{padding-left:18px;padding-right:18px}
-.resume-actions{flex-direction:column}.resume-actions .btn{width:100%}
-.resume-viewer iframe{height:600px}
+.resume-page::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(0, 255, 140, 0.07), transparent 65%);
+  pointer-events: none;
+}
+.resume-top {
+  max-width: none;
+  margin: 0 auto 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+.back-link {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: #888;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.back-link:hover {
+  color: #00ff88;
+  transform: translateX(-4px);
+}
+.resume-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.resume-actions .btn {
+  text-decoration: none;
+}
+.resume-heading {
+  max-width: none;
+  margin: 0 auto 35px;
+  position: relative;
+  z-index: 2;
+}
+.resume-heading .eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  color: #00ff88;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+.resume-heading h1 {
+  margin: 0;
+  font-size: clamp(48px, 7vw, 92px);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  font-weight: 800;
+}
+.resume-heading h1 span {
+  color: #00ff88;
+}
+.resume-heading p {
+  max-width: 600px;
+  margin-top: 22px;
+  color: #888;
+  line-height: 1.7;
+}
+.resume-terminal {
+  max-width: none;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(8, 8, 8, 0.85);
+  backdrop-filter: blur(15px);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    0 0 80px rgba(0, 255, 140, 0.04);
+  overflow: hidden;
+}
+.resume-terminal-head {
+  height: 48px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #777;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+}
+.resume-terminal-head .eyebrow {
+  margin-bottom: 5px;
+}
+.terminal-lights {
+  display: flex;
+  gap: 7px;
+}
+.terminal-lights i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #444;
+  display: block;
+}
+.terminal-path {
+  flex: 1;
+  margin-left: 15px;
+}
+.resume-viewer {
+  background: #111;
+  padding: 20px;
+}
+.resume-viewer iframe {
+  display: block;
+  width: 100%;
+  height: 900px;
+  border: 0;
+  background: #fff;
+}
+.resume-command {
+  max-width: none;
+  margin: 25px auto 0;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.025);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+}
+.resume-command .command {
+  color: #777;
+}
+.resume-command .command span {
+  color: #00ff88;
+}
+.resume-command .status {
+  color: #555;
+}
+@media (max-width: 768px) {
+  .resume-page {
+    padding: 100px 18px 50px;
+  }
+  .resume-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .resume-actions {
+    width: 100%;
+  }
+  .resume-actions .btn {
+    flex: 1;
+    text-align: center;
+  }
+  .resume-viewer {
+    padding: 8px;
+  }
+  .resume-viewer iframe {
+    height: 700px;
+  }
+  .resume-command {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 480px) {
+  .resume-page {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .resume-actions {
+    flex-direction: column;
+  }
+  .resume-actions .btn {
+    width: 100%;
+  }
+  .resume-viewer iframe {
+    height: 600px;
+  }
 }

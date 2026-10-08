@@ -134,11 +134,11 @@ export const toolRows = [
 ];
 // [name, percent] – used by the interactive terminal
 export const skills = [
-  ["Network Security", 70],
-  ["Web Security", 65],
-  ["Penetration Testing", 60],
-  ["Linux", 75],
-  ["Python", 70],
+  ["Network Security"],
+  ["Web Security"],
+  ["Penetration Testing"],
+  ["Linux"],
+  ["Python"],
 ];
 export const filters = [
   ["all", "All"],
