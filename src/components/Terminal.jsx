@@ -8,7 +8,7 @@ const cmds = {
   about: () => [
     "BTech CS graduate focused on network security, web security, pentesting and Linux.",
   ],
-  skills: () => skills.map(([s, p]) => `${s} (${p}%)`),
+  skills: () => skills.map(([s]) => s),
   projects: () => projects.map((p) => `• ${p.name} — ${p.status}`),
   status: () => ["Learning..."],
   contact: () => ["aswinsunil565@gmail.com", "github.com/aswinsunil565"],
